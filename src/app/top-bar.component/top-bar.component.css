@@ -1,0 +1,32 @@
+/* Forzamos el contenedor principal de la barra */
+header {
+  width: 100%;
+  height: 68px;
+  background-color: #1976d2 !important; /* Azul oficial de Angular */
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Forzamos que el título sea blanco */
+header h1, header h1 a, header a {
+  color: white !important;
+  text-decoration: none;
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Estilo del botón de Checkout para que resalte */
+.button {
+  background-color: white !important;
+  color: #1976d2 !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
