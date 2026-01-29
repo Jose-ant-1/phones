@@ -19,10 +19,15 @@ header h1, header h1 a, header a {
 }
 
 /* Estilo del botón de Checkout para que resalte */
+/* Estilo del botón de Checkout: Forzamos el texto a azul */
+header a.button,
 .button {
   background-color: white !important;
   color: #1976d2 !important;
-  padding: 8px 16px;
+  /* Reducimos el padding: 4px arriba/abajo y 12px a los lados */
+  padding: 4px 12px !important;
+  /* Reducimos un poco la letra */
+  font-size: 20px !important;
   border-radius: 4px;
   font-weight: bold;
   text-decoration: none;
@@ -30,3 +35,4 @@ header h1, header h1 a, header a {
   align-items: center;
   gap: 5px;
 }
+
