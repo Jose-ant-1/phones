@@ -1,0 +1,24 @@
+/* Adaptamos el estilo del carrito a los proveedores */
+.supplier-item {
+  width: 100%;
+  min-width: 400px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column; /* Cambiado a column para que el nombre esté arriba del contacto */
+  justify-content: center;
+  padding: 16px 32px;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  background-color: #eeeeee;
+}
+
+.supplier-item h4 {
+  margin: 0 0 4px 0; /* Quitamos márgenes extra del título */
+  color: #1976d2;    /* Azul corporativo de Angular */
+}
+
+.supplier-item p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}

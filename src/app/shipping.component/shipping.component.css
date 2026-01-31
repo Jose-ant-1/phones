@@ -1,0 +1,22 @@
+/* Selecciona el contenedor principal que ya tiene la clase */
+.shipping-item {
+  width: 100%;
+  min-width: 400px;
+  max-width: 450px;
+  background-color: #eeeeee;
+  padding: 16px 32px;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+
+/* Selecciona el párrafo dentro de esa clase sin necesidad de ponerle clase al <p> */
+.shipping-item p {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Esto separa el nombre del precio a los extremos */
+  font-family: sans-serif;
+  color: #333;
+}

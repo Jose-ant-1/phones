@@ -1,0 +1,8 @@
+<h3>Suppliers</h3>
+
+@for (supplier of suppliers | async; track supplier.id) {
+  <div class="supplier-item">
+    <h4>{{ supplier.name }}</h4>
+    <p>{{ supplier.contact }}</p>
+  </div>
+}

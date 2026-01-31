@@ -1,1 +1,7 @@
-<p>shipping.component works!</p>
+<h3>Shipping Prices</h3>
+
+@for (shipping of shippingCosts | async; track shipping.type) {
+  <div class="shipping-item">
+    <p>{{ shipping.type }} {{ shipping.price | currency }}</p>
+  </div>
+}
