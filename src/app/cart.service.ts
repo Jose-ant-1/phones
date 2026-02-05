@@ -30,7 +30,7 @@ export class CartService {
   }
 
   getSuppliers() {
-    return this.http.get<{id: number, name: string, contact: string}[]>('/suppliers.json');
+    return this.http.get<any[]>('/suppliers.json');
   }
 
 
