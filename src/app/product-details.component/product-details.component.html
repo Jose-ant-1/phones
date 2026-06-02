@@ -12,6 +12,10 @@
       </a>
     </p>
 
-    <button type="button" (click)="addToCart(product!)" (click)="restStock()" [disabled]="!comprobarStock() || buyable">@if(product.stock != 0) {buy}@else{Agotado}</button>
+    <button type="button"
+            (click)="addToCart(product!)"
+            [disabled]="!comprobarStock()">
+      @if(product.stock != 0) {buy} @else {Agotado}
+    </button>
   </div>
 }

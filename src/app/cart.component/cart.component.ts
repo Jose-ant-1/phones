@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {CartService} from '../cart.service';
-import {RouterLink} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CartService, CartItem } from '../cart.service'; // Importamos CartItem
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +13,8 @@ import {RouterLink} from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  items: any[] = [];
+  // Cambiamos el tipo a CartItem para tener acceso a la propiedad .quantity
+  items: CartItem[] = [];
   checkoutForm: FormGroup;
 
   constructor(private cartService: CartService, private formBuilder: FormBuilder) {
@@ -24,8 +25,15 @@ export class CartComponent implements OnInit {
     });
   }
 
+  ngOnInit() {}
 
-  ngOnInit() {
+  onIncrement(item: CartItem) {
+    this.cartService.addToCart(item);
+    this.items = this.cartService.getItems();
+  }
+
+  onDecrement(item: CartItem) {
+    this.items = this.cartService.removeItem(item.id); // 👈 Mantiene item.id, que ahora es lo que espera el servicio
   }
 
   onSubmit() {
@@ -34,6 +42,4 @@ export class CartComponent implements OnInit {
     window.alert('Thank you for your purchase!');
     this.checkoutForm.reset();
   }
-
-
 }

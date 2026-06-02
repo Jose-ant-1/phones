@@ -5,9 +5,15 @@
 </p>
 
 @for (item of items; track item.id) {
-  <div class="cart-item">
+  <div class="cart-item" style="display: flex; gap: 15px; align-items: center; margin-bottom: 10px;">
     <span>{{ item.name }}</span>
-    <span>{{ item.price | currency }}</span>
+    <span>{{ (item.price * item.quantity) | currency }}</span>
+
+    <div class="quantity-controls">
+      <button type="button" (click)="onDecrement(item)">-</button>
+      <span style="margin: 0 8px; font-weight: bold;">{{ item.quantity }}</span>
+      <button type="button" (click)="onIncrement(item)">+</button>
+    </div>
   </div>
 }
 
