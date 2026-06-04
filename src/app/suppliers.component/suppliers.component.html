@@ -1,8 +1,12 @@
 <h3>Suppliers</h3>
 
 @for (supplier of suppliers | async; track supplier.id) {
-  <div class="supplier-item">
-    <h4>{{ supplier.name }}</h4>
+  <div class="supplier-item" style="margin-bottom: 15px; padding: 10px; border: 1px dashed #aaa;">
+    <h4>
+      <a [routerLink]="['/suppliers', supplier.id]">
+        {{ supplier.name }}
+      </a>
+    </h4>
     <p>{{ supplier.contact }}</p>
   </div>
 }

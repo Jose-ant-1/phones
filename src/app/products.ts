@@ -30,6 +30,6 @@ export const products = [
     price: 299,
     description: 'A normal phone',
     supplierId: 2,
-    stock: 0
+    stock: 1
   }
 ];

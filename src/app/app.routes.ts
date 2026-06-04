@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 import { ProductListComponent } from './product-list.component/product-list.component';
-import { ProductDetailsComponent } from './product-details.component/product-details.component'; // Asegúrate de importar esto
+import { ProductDetailsComponent } from './product-details.component/product-details.component';
 import { CartComponent } from './cart.component/cart.component';
 import {ShippingComponent} from './shipping.component/shipping.component';
 import {SuppliersComponent} from './suppliers.component/suppliers.component';
+import {SupplierDetailsComponent} from './supplier-details.component/supplier-details.component';
 
 export const routes: Routes = [
   { path: '', component: ProductListComponent, title: 'Home page' },
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'cart', component: CartComponent, title: 'Cart' },
   {path: 'shipping', component: ShippingComponent, title: 'Shipping cart'},
   {path: 'suppliers', component: SuppliersComponent, title: 'Supplier list'},
+  { path: 'suppliers/:supplierId', component: SupplierDetailsComponent }
 ];

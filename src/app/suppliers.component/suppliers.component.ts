@@ -2,12 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {CartService} from '../cart.service';
 import {AsyncPipe} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-suppliers',
   standalone: true,
   imports: [
-    AsyncPipe
+    AsyncPipe,
+    RouterLink
   ],
   templateUrl: './suppliers.component.html',
   styleUrl: './suppliers.component.css',

@@ -1,0 +1,34 @@
+<h2>Supplier Details</h2>
+
+@if (supplier) {
+  <div class="supplier-card" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+    <h3>Company: {{ supplier.name }}</h3>
+    <p><strong>Contact Email:</strong> {{ supplier.contact }}</p>
+  </div>
+
+  <h3>Products from this Supplier</h3>
+
+  @if (associatedProducts.length > 0) {
+    <div class="products-list">
+      @for (product of associatedProducts; track product.id) {
+        <div style="margin-bottom: 12px; padding: 8px; background-color: #f9f9f9; border-left: 4px solid #007bff;">
+          <h4>
+            <a [routerLink]="['/products', product.id]">
+              {{ product.name }}
+            </a>
+          </h4>
+          <p>Price: {{ product.price | currency }}</p>
+          <p>Available Stock: {{ product.stock }} unidades</p>
+        </div>
+      }
+    </div>
+  } @else {
+    <p style="color: #666; font-style: italic;">This supplier doesn't have any products associated yet.</p>
+  }
+} @else {
+  <p>Loading supplier details or supplier not found...</p>
+}
+
+<p style="margin-top: 20px;">
+  <a routerLink="/suppliers">⬅ Back to Suppliers List</a>
+</p>
